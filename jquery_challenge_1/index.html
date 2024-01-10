@@ -4,7 +4,6 @@
 <head>
     <link rel='stylesheet' type='text/css' href='style.css'>
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
-
 </head>
 
 <body>
@@ -38,8 +37,39 @@
             </div>
         </div>
     </div>
+
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"
         integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function () {
+            $(".hint-box").on("click", function () {
+                $(".hint").slideToggle("slow");
+                $(".frown").show();
+            });
+
+            $(".wrong-answer-one.answer").on("click", function () {
+                $(".wrong-text-one.answer-text").fadeOut("slow");
+                $(".frown").show();
+            });
+
+            $(".wrong-answer-two.answer").on("click", function () {
+                $(".wrong-text-two.answer-text").fadeOut("fast");
+                $(".frown").show();
+            });
+
+            $(".wrong-answer-three.answer").on("click", function () {
+                $(".wrong-text-three.answer-text").fadeOut("slow");
+                $(".frown").show();
+            });
+            $(".correct-answer.answer").on("click", function () {
+                $(".frown").hide();
+                $(".smiley").show(); 
+                $(".wrong-text-one.answer-text").fadeOut("fast");
+                $(".wrong-text-two.answer-text").fadeOut("fast");
+                $(".wrong-text-three.answer-text").fadeOut("fast");
+            });
+        });
+    </script>
     <script src='main.js'></script>
 </body>
 
